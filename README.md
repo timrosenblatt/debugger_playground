@@ -4,7 +4,7 @@
 
 On Linux, `gdb` is the best option for debugging a running process.
 
-At the moment, there's a (fairly widespread issue with gdb on OSX)[https://github.com/Homebrew/homebrew-core/issues/20047] where (gdb is tied to dyld v14 but newer versions of OSX are on dyld v15)[https://sourceware.org/bugzilla/show_bug.cgi?id=20981]. So, `lldb` (which comes with OSX) is the alternative.
+At the moment, there's a [fairly widespread issue with gdb on OSX](https://github.com/Homebrew/homebrew-core/issues/20047) where [gdb is tied to dyld v14 but newer versions of OSX are on dyld v15](https://sourceware.org/bugzilla/show_bug.cgi?id=20981). So, `lldb` (which comes with OSX) is the alternative.
 
 There is a `static_hang.rb` file in this repo. You can invoke it with `ruby -e "require './static_hang'; RipVanWinkle.new.call"`
 
@@ -18,7 +18,7 @@ On Linux, `top -p THE_PID`, and on OSX `top -pid THE_PID`, will let you check on
 
 You need the PID and your Ruby path to connect GDB to this process with `gdb /your/ruby/path PID`. I'm using rbenv so I run `rbenv which ruby`. YMMV.
 
-Thanks to (Jon Yurek (and Rasmus before him))[https://robots.thoughtbot.com/using-gdb-to-inspect-a-running-ruby-process] we have some simple GDB functions that are helpful. When you are in the GDB prompt, just paste them in to define them (they can also be put in ~/.gdbinit). Then, run `redirect_stdout` to start, then you can use `ruby_eval('Kernel.caller')` to run arbitrary Ruby code.
+Thanks to [Jon Yurek (and Rasmus before him)](https://robots.thoughtbot.com/using-gdb-to-inspect-a-running-ruby-process) we have some simple GDB functions that are helpful. When you are in the GDB prompt, just paste them in to define them (they can also be put in ~/.gdbinit). Then, run `redirect_stdout` to start, then you can use `ruby_eval('Kernel.caller')` to run arbitrary Ruby code.
 
 ```
 define redirect_stdout
@@ -38,7 +38,7 @@ One note: the `Process.pid.to_s` will be the GDB process's PID, and not your Rub
 
 Run `lldb` and attach it to the process with `attach THE_PID_GOES_HERE`
 
-I have (a few LLDB macros methods)[https://christoph.luppri.ch/articles/ruby/debugging-ruby-programs-on-osx-with-lldb/] in `ruby.py`. Load it with `command script import ruby.py`
+I have [a few LLDB macros methods](https://christoph.luppri.ch/articles/ruby/debugging-ruby-programs-on-osx-with-lldb/) in `ruby.py`. Load it with `command script import ruby.py`
 
 By default, these all output to stdout, and if you're debugging a process on a running server, you won't have access to that, so you should redirect stdout to a file and tail it with `redirect_stdout`
 
