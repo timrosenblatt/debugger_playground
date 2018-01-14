@@ -43,8 +43,8 @@ I have [a few LLDB macros methods](https://christoph.luppri.ch/articles/ruby/deb
 By default, these all output to stdout, and if you're debugging a process on a running server, you won't have access to that, so you should redirect stdout to a file and tail it with `redirect_stdout`
 
 You can start and stop the process:
-`process continue`
-`process interrupt`
+- `process continue`
+- `process interrupt`
 
 When you're done you can run `kill` to terminate the process. `quit` will get you out of lldb.
 
