@@ -1,5 +1,13 @@
 # Ruby Debugging Playground!
 
+When debugging, other things to consider:
+* MySQL `show full processlist`
+* strace
+* ltrace
+* iotop
+* netstat
+* logs (if you can correlate the last line from the process)
+
 ## Background
 
 On Linux, `gdb` is the best option for debugging a running process.
