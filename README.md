@@ -4,8 +4,8 @@ When debugging, other things to consider:
 * MySQL `show full processlist`
 * strace
 * ltrace
-* iotop
-* netstat
+* `iotop`
+* `netstat` or `lsof -i`
 * logs (if you can correlate the last line from the process)
 
 ## Background
